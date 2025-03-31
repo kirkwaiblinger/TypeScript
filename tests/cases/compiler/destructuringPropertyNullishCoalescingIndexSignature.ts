@@ -1,5 +1,9 @@
 // test for #51665
-
-declare const maybeIndexable: { [key: string]: string} | undefined
-const { anyThing } = maybeIndexable ?? {};
-const { anyThing2 } = maybeIndexable || {};
+const EMPTY_OBJECT = {};
+declare const maybeIndexable: { [key: string]: string }
+{
+    const { anyThing } = maybeIndexable ?? EMPTY_OBJECT;
+}
+{
+    const { anyThing } = maybeIndexable ?? {};
+}
