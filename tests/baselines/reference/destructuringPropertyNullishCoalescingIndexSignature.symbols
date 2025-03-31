@@ -1,0 +1,17 @@
+//// [tests/cases/compiler/destructuringPropertyNullishCoalescingIndexSignature.ts] ////
+
+=== destructuringPropertyNullishCoalescingIndexSignature.ts ===
+// test for #51665
+
+declare const maybeIndexable: { [key: string]: string} | undefined
+>maybeIndexable : Symbol(maybeIndexable, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 2, 13))
+>key : Symbol(key, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 2, 33))
+
+const { anyThing } = maybeIndexable ?? {};
+>anyThing : Symbol(anyThing, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 3, 7))
+>maybeIndexable : Symbol(maybeIndexable, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 2, 13))
+
+const { anyThing2 } = maybeIndexable || {};
+>anyThing2 : Symbol(anyThing2, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 4, 7))
+>maybeIndexable : Symbol(maybeIndexable, Decl(destructuringPropertyNullishCoalescingIndexSignature.ts, 2, 13))
+
